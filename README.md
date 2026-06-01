@@ -351,6 +351,10 @@ Build a payment API endpoint. Users must authenticate via JWT.
 Accept JSON card details. Store transaction records in the database.
 Handle errors gracefully.
 ```
+<img width="1882" height="936" alt="image" src="https://github.com/user-attachments/assets/cac72ef8-c3a7-4fc4-b2fe-94c2fb5bf76e" />
+
+<img width="1878" height="938" alt="image" src="https://github.com/user-attachments/assets/1809842a-c03b-411e-8b91-0bad7dfe9ead" />
+
 
 **Output:**
 ```json
@@ -380,6 +384,7 @@ Authetication via JWT. Encrypion required. Audiit all transactions. Payement pro
 ```
 
 **Output:** AUTH, ENCRYPT, AUDIT, PAYMENT all correctly detected via Levenshtein DP.
+<img width="1875" height="936" alt="image" src="https://github.com/user-attachments/assets/d35f598f-b77f-44e5-9b69-0cefd7eed6ef" />
 
 ---
 
@@ -406,20 +411,9 @@ Authetication via JWT. Encrypion required. Audiit all transactions. Payement pro
 
 ---
 
-## Why No If-Else
 
-The old approach encoded rules as code:
-```java
-if (spec.contains("payment")) {
-    missing.add("AUTH");
-    missing.add("ENCRYPT");
-}
-```
 
-Adding a new domain meant writing new code. The algorithm and the rules
-were the same thing.
-
-SpecGuard separates them. The algorithm (BFS, Trie traversal, HashSet
+The algorithm (BFS, Trie traversal, HashSet
 subtraction) is fixed. The rules are data:
 
 ```java
